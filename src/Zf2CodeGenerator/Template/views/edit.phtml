@@ -1,0 +1,51 @@
+ <?php
+/**             
+ * Caminho module/Modulo/view/modulo/${ctrlName}/edit.phtml
+ */
+
+ $title = 'Editar ${CtrlName}';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1> <br />
+<div class="collapse navbar-collapse">
+	<ul class="nav navbar-nav">
+	    <li>
+	        <a href="<?php echo $this->url('${ctrlName}', array('action'=>'add'));?>">  
+	            <?php echo $this->translate('Criar novo registro') ?>
+	        </a>
+	    </li>
+	    <li>
+	        <a href="<?php echo $this->url('${ctrlName}', array('action'=>'delete', 'id' => $this->${id}));?>">  
+	            <?php echo $this->translate('Remover registro') ?>
+	        </a>
+	    </li>
+	    <li>
+	        <a href="<?php echo $this->url('${ctrlName}', array('action'=>'view', 'id' => $this->${id}));?>"> 
+	            <?php echo $this->translate('Visualizar registro') ?>
+	        </a>
+	    </li>
+	    <li>
+	        <a href="<?php echo $this->url('${ctrlName}', array('action'=>'pedidos', 'id' => $this->${id}));?>"> 
+	            <?php echo $this->translate('Ver Pedidos') ?>
+	        </a>
+	    </li>
+	</ul>
+</div>
+<br />
+<div>
+<?php
+	$form = $this->form;
+	$form->setAttribute('action', $this->url(
+		'${ctrlName}',
+		array(
+			'action' => 'edit',
+			'id'     => $this->${id}
+			)
+		));
+	$form->prepare();
+	echo $this->form()->openTag($form);
+	${cpsNames}
+	echo $this->formSubmit($form->get('submit')); 
+	echo $this->form()->closeTag();
+?>
+</div>

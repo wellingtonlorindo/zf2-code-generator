@@ -1,0 +1,35 @@
+<?php
+/**             
+ * Caminho module/Modulo/view/modulo/${ctrlName}/index.phtml
+ */
+$title = '${CtrlNames}';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li>
+            <a href="<?php echo $this->url('${ctrlName}', array('action'=>'add'));?>">  
+                <?php echo $this->translate('Criar novo registro') ?>
+            </a>
+        </li>        
+    </ul>
+</div>
+<br />
+
+<table class="table">
+    <tr>
+        ${tbCabecalho}
+        <th>Ações</th>
+    </tr>
+    <?php foreach ($${ctrlNames} as $${ctrlName}) : ?>
+    <tr>
+        ${tbLinhas}
+        <td>
+            <a href="<?php echo $this->url('${ctrlName}', array('action'=>'view', 'id' => $${ctrlName}->${id}));?>">Ver</a>
+            <a href="<?php echo $this->url('${ctrlName}', array('action'=>'edit', 'id' => $${ctrlName}->${id}));?>">Editar</a>
+            <a href="<?php echo $this->url('${ctrlName}', array('action'=>'delete', 'id' => $${ctrlName}->${id}));?>">Apagar</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>

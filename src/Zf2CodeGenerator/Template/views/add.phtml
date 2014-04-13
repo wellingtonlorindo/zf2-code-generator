@@ -1,0 +1,28 @@
+<?php
+/**             
+ * Caminho module/Modulo/view/modulo/${ctrlName}/add.phtml
+ */
+
+$title = 'Adicionar ${CtrlName}';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<div class="collapse navbar-collapse">
+	<ul class="nav navbar-nav">
+	    <li>
+	        <a href="<?php echo $this->url('${ctrlName}', array('action'=>'index'));?>">  
+	            <?php echo $this->translate('Listar registros') ?>
+	        </a>
+	    </li>
+	</ul>
+</div>
+<br />
+
+<?php
+$form->setAttribute('action', $this->url('${ctrlName}', array('action' => 'add')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+${cpsNames}
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();

@@ -1,0 +1,25 @@
+<?php
+/**             
+ * Caminho module/Modulo/view/modulo/${ctrlName}/delete.phtml
+ */
+
+$title = 'Apagar ${CtrlName}';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<p>Tem certeza que deseja apagar o registro?
+</p>
+<?php
+$url = $this->url('${ctrlName}', array(
+	'action' => 'delete',
+	'id'     => $this->${id},
+	));
+	?>
+	<form action="<?php echo $url; ?>" method="post">
+		<div>
+			<input type="hidden" name="id" value="<?php echo (int) $${ctrlName}->${id}; ?>" />
+			<input type="submit" name="del" value="Sim" />
+			<input type="submit" name="del" value="Não" />
+		</div>
+	</form>
