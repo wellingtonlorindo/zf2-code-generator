@@ -1,4 +1,12 @@
 <?php
+
+/**
+ * Code Generator Module 
+ *
+ * @link https://github.com/wellingtonlorindo/zf2-code-generator.git
+ * @license http://framework.zend.com/license/new-bsd New BSD License
+ */
+
 namespace Zf2CodeGenerator;
 
 class Module
